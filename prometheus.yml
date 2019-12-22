@@ -1,0 +1,13 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: prometheus
+  namespace: prometheus
+spec:
+  releaseName: prometheus
+  chart:
+    https: https://github.com/helm/charts/
+    path: stable/prometheus
+    ref: master
+  values:
+    replicaCount: 1
