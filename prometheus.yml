@@ -1,4 +1,11 @@
-apiVersion: flux.weave.works/v1beta1
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  prometheus
+
+---
+
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: prometheus
@@ -6,7 +13,7 @@ metadata:
 spec:
   releaseName: prometheus
   chart:
-    https: https://github.com/helm/charts/
+    git: ssh://git@github.com/helm/charts/
     path: stable/prometheus
     ref: master
   values:
