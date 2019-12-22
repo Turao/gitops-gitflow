@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RabbitMQ
+  namespace: rabbitmq
+spec:
+  selector:
+    matchLabels:
+      app: RabbitMQ
+  template:
+    metadata:
+      labels:
+        app: RabbitMQ
+    spec:
+      containers:
+      - name: RabbitMQ
+        image: rabbitmq:3-management
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 15672
