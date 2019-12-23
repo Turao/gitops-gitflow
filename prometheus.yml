@@ -1,3 +1,4 @@
+# Namespace
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -5,6 +6,7 @@ metadata:
 
 ---
 
+# Chart
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
