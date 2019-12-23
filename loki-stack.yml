@@ -16,7 +16,7 @@ spec:
   releaseName: loki
   chart:
     repository: https://grafana.github.io/loki/charts
-    name: loki-stack
+    name: loki/loki-stack
     version: 0.17.1
     name: 
   values:
@@ -30,3 +30,4 @@ spec:
       server:
         persistentVolume:
           enabled: false
+
