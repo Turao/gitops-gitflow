@@ -1,0 +1,36 @@
+# What permissions should a Team-Alpha member have?
+# (namespaced by team name so we can prohibit api usage 
+#  on other namespaces)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: team-alpha
+  name: team-alpha-member
+rules:
+- apiGroups: ['']
+  resources:
+    - 'pods'
+    - 'deployments'
+    - 'sevices'
+  verbs:
+    - 'get'
+    - 'list'
+    - 'watch'
+
+---
+
+# The resource that binds all members of 
+# the Team Alpha group to their permissions
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  namespace: team-alpha
+  name: team-alpha-binding
+subjects:
+  - kind: Group
+    name: team-alpha-members
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: team-alpha-member
+  apiGroup: rbac.authorization.k8s.io
