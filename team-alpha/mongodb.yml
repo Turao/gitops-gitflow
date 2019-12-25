@@ -8,5 +8,5 @@ spec:
   releaseName: mongodb
   chart:
     name: mongodb
-    version: 7.2.8
+    version: 7.6.2
     repository: https://kubernetes-charts.storage.googleapis.com
