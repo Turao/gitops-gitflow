@@ -1,0 +1,20 @@
+# Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  loki
+
+---
+
+# Chart
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mongodb
+  namespace: team-alpha
+spec:
+  releaseName: mongodb
+  chart:
+    name: mongodb
+    version: 7.2.8
+    repository: https://kubernetes-charts.storage.googleapis.com
