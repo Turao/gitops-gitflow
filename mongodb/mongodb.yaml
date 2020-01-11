@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: mongodb
-  namespace: team-alpha
+  namespace: mongodb
 spec:
   releaseName: mongodb
   chart:
